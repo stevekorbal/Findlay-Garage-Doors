@@ -1,0 +1,8 @@
+{
+  "name": "Findlay Garage Doors",
+  "description": "High-converting SEO website for Findlay OH garage door repairs, designed to maximize lead generation and local search rankings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
