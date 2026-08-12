@@ -134,7 +134,7 @@ export default function App() {
         'provider': {
           '@type': 'LocalBusiness',
           'name': 'Findlay Garage Door Repair',
-          'telephone': '+14195558240',
+          'telephone': '+15672940010',
           'priceRange': '$$',
           'image': 'https://findlaygaragedoorrepair.com/images/garage-door-repair.webp',
           'address': {
@@ -192,7 +192,7 @@ export default function App() {
           '@type': 'LocalBusiness',
           'name': `Findlay Garage Door Repair - ${city.cityName}`,
           'description': city.intro,
-          'telephone': '+14195558240',
+          'telephone': '+15672940010',
           'priceRange': '$$',
           'url': canonicalUrl,
           'address': {
@@ -277,7 +277,7 @@ export default function App() {
           break;
         case 'contact':
           title = 'Contact Us | Findlay Garage Door Repair Findlay OH';
-          description = 'Get in touch with our local team for emergency repairs or free estimates in Findlay, OH. We\'re available 24/7 at (419) 555-8240.';
+          description = 'Get in touch with our local team for emergency repairs or free estimates in Findlay, OH. We\'re available 24/7 at (567) 294-0010.';
           break;
         case 'privacy-policy':
           title = 'Privacy Policy | Findlay Garage Door Repair';
@@ -301,7 +301,7 @@ export default function App() {
         'image': 'https://findlaygaragedoorrepair.com/images/garage-door-repair.webp',
         '@id': 'https://findlaygaragedoorrepair.com/',
         'url': 'https://findlaygaragedoorrepair.com/',
-        'telephone': '+14195558240',
+        'telephone': '+15672940010',
         'priceRange': '$$',
         'address': {
           '@type': 'PostalAddress',

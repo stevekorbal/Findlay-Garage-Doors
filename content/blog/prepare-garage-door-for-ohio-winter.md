@@ -60,7 +60,7 @@ If your garage is attached to your home or sits directly below a master bedroom,
 - Quiet, whisper-smooth door travel
 - Increased structural resistance against heavy winter wind gusts
 
-Learn more about our [New Garage Door Installation](/garage-door-installation) services or schedule a free estimate today by calling **(419) 555-8240**.
+Learn more about our [New Garage Door Installation](/garage-door-installation) services or schedule a free estimate today by calling **(567) 294-0010**.
 
 ---
 

@@ -69,7 +69,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
         </div>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
-            href="tel:4195558240"
+            href="tel:5672940010"
             className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl text-sm shadow transition-all flex items-center justify-center gap-2"
           >
             <PhoneCall className="w-4 h-4 fill-current" />
@@ -126,7 +126,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
               required
               value={formData.phone}
               onChange={handleChange}
-              placeholder="(419) 555-8240"
+              placeholder="(567) 294-0010"
               className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all"
             />
           </div>

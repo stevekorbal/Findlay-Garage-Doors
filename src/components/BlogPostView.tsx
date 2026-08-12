@@ -169,11 +169,11 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
               </p>
             </div>
             <a
-              href="tel:4195558240"
+              href="tel:5672940010"
               className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-black py-3.5 px-6 rounded-xl text-xs tracking-wider transition-all flex items-center justify-center gap-2 border border-amber-600 shadow-md shrink-0 w-full sm:w-auto"
             >
               <PhoneCall className="w-4 h-4 fill-current" />
-              CALL DISPATCH: (419) 555-8240
+              CALL DISPATCH: (567) 294-0010
             </a>
           </div>
 

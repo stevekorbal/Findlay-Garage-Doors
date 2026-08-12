@@ -180,11 +180,11 @@ export default function BlogIndexView({ onNavigate }: BlogIndexViewProps) {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
             <a
-              href="tel:4195558240"
+              href="tel:5672940010"
               className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-black py-3.5 px-6 rounded-xl text-xs tracking-wider text-center transition-all flex items-center justify-center gap-2 border border-amber-600 shadow-lg"
             >
               <PhoneCall className="w-4 h-4 fill-current" />
-              CALL (419) 555-8240
+              CALL (567) 294-0010
             </a>
             <button
               onClick={() => onNavigate('contact')}

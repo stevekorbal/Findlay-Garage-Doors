@@ -81,6 +81,6 @@ At **Findlay Garage Door Repair**, our technicians arrive with heavy-duty, oil-t
 ### Recommended Next Steps
 - Disconnect power to your automatic garage door opener.
 - Keep family members and pets clear of the garage doorway.
-- Contact our 24/7 local dispatch team at **(419) 555-8240** for same-day spring replacement across Findlay, Arlington, Bluffton, and Fostoria.
+- Contact our 24/7 local dispatch team at **(567) 294-0010** for same-day spring replacement across Findlay, Arlington, Bluffton, and Fostoria.
 
 Read more about our complete [Garage Door Spring Repair](/garage-door-spring-repair) services or explore our [Emergency Garage Door Repair](/emergency-garage-door-repair) options.

@@ -56,11 +56,11 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
             Licensed, Insured & Local
           </span>
           <a
-            href="tel:4195558240"
+            href="tel:5672940010"
             className="flex items-center gap-1.5 text-slate-100 hover:text-amber-500 font-bold transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-amber-500" />
-            (419) 555-8240
+            (567) 294-0010
           </a>
         </div>
       </div>
@@ -222,11 +222,11 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
           <div className="hidden sm:flex items-center gap-3">
             <a
               id="header-call-button"
-              href="tel:4195558240"
+              href="tel:5672940010"
               className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-5 py-2.5 rounded-lg font-bold text-sm tracking-wide transition-all shadow-md hover:shadow-lg flex items-center gap-2 transform active:scale-95 cursor-pointer border border-amber-600"
             >
               <Phone className="w-4 h-4 fill-current" />
-              CALL (419) 555-8240
+              CALL (567) 294-0010
             </a>
           </div>
 
@@ -332,11 +332,11 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
             {/* Mobile Contact Button */}
             <div className="pt-2 flex flex-col gap-2">
               <a
-                href="tel:4195558240"
+                href="tel:5672940010"
                 className="bg-amber-500 text-slate-950 py-3 rounded-lg font-bold text-sm tracking-wide shadow text-center flex items-center justify-center gap-2 border border-amber-600"
               >
                 <Phone className="w-4 h-4 fill-current" />
-                CALL NOW: (419) 555-8240
+                CALL NOW: (567) 294-0010
               </a>
               <button
                 onClick={() => handleLinkClick('contact')}
