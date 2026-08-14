@@ -16,6 +16,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
     city: '',
     serviceNeeded: '',
     message: '',
+    hp: '', // Honeypot field for bot protection
     agreedToTerms: true
   });
 
@@ -32,22 +33,62 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.serviceNeeded || !formData.city) {
+    
+    // Prevent duplicate submissions
+    if (status === 'submitting') {
+      return;
+    }
+
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.serviceNeeded.trim() || !formData.city.trim()) {
       setStatus('error');
       setErrorMessage('Please fill in all required fields (Name, Phone, City, Service).');
       return;
     }
 
     setStatus('submitting');
-    
-    // Simulate API call to express backend /api/contact or similar
-    setTimeout(() => {
-      setStatus('success');
-      // Console log for telemetry/debugging
-      console.log('Lead submitted successfully from:', sourcePage, formData);
-    }, 1200);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          city: formData.city.trim(),
+          service: formData.serviceNeeded.trim(),
+          message: formData.message.trim(),
+          hp: formData.hp.trim(),
+        }),
+      });
+
+      let data: any = null;
+      const contentType = response.headers.get('content-type') || '';
+      
+      if (contentType.includes('application/json')) {
+        try {
+          data = await response.json();
+        } catch (jsonErr) {
+          console.error('Non-JSON or invalid response received:', jsonErr);
+        }
+      }
+
+      if (response.ok && data?.success) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+        setErrorMessage("Sorry, we couldn't send your request. Please call us directly.");
+      }
+    } catch (error) {
+      console.error('Submission request failed:', error);
+      setStatus('error');
+      setErrorMessage("Sorry, we couldn't send your request. Please call us directly.");
+    }
   };
 
   if (status === 'success') {
@@ -57,7 +98,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
           <CheckCircle className="w-10 h-10" />
         </div>
         <h3 className="text-emerald-950 font-extrabold text-xl md:text-2xl tracking-tight">
-          Request Received Successfully!
+          Thank you. Your request has been received. We'll be in touch shortly.
         </h3>
         <p className="text-emerald-800 text-sm mt-3 leading-relaxed">
           Thank you, <strong>{formData.name}</strong>. Our local Findlay service coordinator has received your request for <strong>{formData.serviceNeeded}</strong>.
@@ -65,7 +106,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
         <div className="bg-white rounded-xl p-4 my-5 border border-emerald-100 text-left text-xs text-slate-600 flex flex-col gap-2 shadow-sm">
           <span className="font-bold text-slate-800 text-sm block border-b border-slate-100 pb-1.5">What Happens Next?</span>
           <p>• <strong>Within 10 Minutes:</strong> We will call you at <strong className="text-slate-900">{formData.phone}</strong> to confirm your address and schedule details.</p>
-          <p>• <strong>Technician Dispatch:</strong> A certified technician will be assigned to your service run in {formData.city || 'your area'}.</p>
+          <p>• <strong>Technician Dispatch:</strong> A certified technician will be assigned to your service run in {formData.city || 'Findlay, OH'}.</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
@@ -89,6 +130,20 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
       </div>
 
       <form onSubmit={handleSubmit} className="p-6 flex flex-col gap-4">
+        {/* Hidden Honeypot Field for anti-spam */}
+        <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+          <label htmlFor="form-hp">Leave this field blank</label>
+          <input
+            id="form-hp"
+            type="text"
+            name="hp"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.hp}
+            onChange={handleChange}
+          />
+        </div>
+
         {status === 'error' && (
           <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-3 text-xs flex items-start gap-2">
             <AlertCircle className="w-4 h-4 shrink-0 text-red-600 mt-0.5" />
@@ -226,7 +281,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="w-full bg-amber-500 hover:bg-amber-600 disabled:bg-slate-300 text-slate-950 font-black py-3 px-6 rounded-xl text-sm tracking-wider transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer border border-amber-600 mt-2 hover:shadow-lg active:scale-95 transform"
+          className="w-full bg-amber-500 hover:bg-amber-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-slate-950 font-black py-3 px-6 rounded-xl text-sm tracking-wider transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer border border-amber-600 mt-2 hover:shadow-lg active:scale-95 transform"
         >
           {status === 'submitting' ? (
             <>
